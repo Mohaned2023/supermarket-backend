@@ -32,7 +32,7 @@ $ npm install
 ```
 
 ### Set the config files:
-- Go to [config](https://github.com/Mohaned2023/supermarket-backend/config) to set the config files.
+- Go to [config](https://github.com/Mohaned2023/supermarket-backend/tree/main/config) to set the config files.
 
 ### Running the app
 
