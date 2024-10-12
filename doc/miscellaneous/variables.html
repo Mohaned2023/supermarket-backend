@@ -1,0 +1,1178 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>market-system-backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">market-system-backend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#createDoc" title="src/invoice/swagger/controller.swagger.ts" ><b>createDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createDoc" title="src/item/swagger/controller.swagger.ts" ><b>createDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createDoc" title="src/returned-invoice/swagger/controller.swagger.ts" ><b>createDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#db" title="src/config/typeorm.config.ts" ><b>db</b>&nbsp;&nbsp;&nbsp;(src/.../typeorm.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteDoc" title="src/auth/swagger/controller.swagger.ts" ><b>deleteDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteDoc" title="src/invoice/swagger/controller.swagger.ts" ><b>deleteDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deleteDoc" title="src/item/swagger/controller.swagger.ts" ><b>deleteDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#findDoc" title="src/invoice/swagger/controller.swagger.ts" ><b>findDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GetUser" title="src/auth/decorators/jwt.decorator.ts" ><b>GetUser</b>&nbsp;&nbsp;&nbsp;(src/.../jwt.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#invoiceDoc" title="src/report/swagger/controller.swagger.ts" ><b>invoiceDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#itemDoc" title="src/report/swagger/controller.swagger.ts" ><b>itemDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#jwt" title="src/config/jwt.config.ts" ><b>jwt</b>&nbsp;&nbsp;&nbsp;(src/.../jwt.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#jwt" title="src/auth/strategies/jwt.strategy.ts" ><b>jwt</b>&nbsp;&nbsp;&nbsp;(src/.../jwt.strategy.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#jwtConfig" title="src/config/jwt.config.ts" ><b>jwtConfig</b>&nbsp;&nbsp;&nbsp;(src/.../jwt.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loginDoc" title="src/auth/swagger/controller.swagger.ts" ><b>loginDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#registerDoc" title="src/auth/swagger/controller.swagger.ts" ><b>registerDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#returnedInvoiceDoc" title="src/report/swagger/controller.swagger.ts" ><b>returnedInvoiceDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Roles" title="src/auth/decorators/roles.decorator.ts" ><b>Roles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#server" title="src/main.ts" ><b>server</b>&nbsp;&nbsp;&nbsp;(src/.../main.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#typeormConfig" title="src/config/typeorm.config.ts" ><b>typeormConfig</b>&nbsp;&nbsp;&nbsp;(src/.../typeorm.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateDoc" title="src/auth/swagger/controller.swagger.ts" ><b>updateDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateDoc" title="src/item/swagger/controller.swagger.ts" ><b>updateDoc</b>&nbsp;&nbsp;&nbsp;(src/.../controller.swagger.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/invoice/swagger/controller.swagger.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDoc"></a>
+                    <span class="name">
+                        <span ><b>createDoc</b></span>
+                        <a href="#createDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Creating Invoice&#x27;,
+        description: &#x27;Creating invoice in the database. - &#x60;Role: Accountant&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;The invoice created successfully.&#x27;,
+            type: InvoiceEntity
+        },
+        notFound: {
+            description: &#x27;One of the items is not found in the database.&#x27;
+        },
+        badRequest: {
+            description: &#x27;There no loger enough items in the database.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create the invoice.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDoc"></a>
+                    <span class="name">
+                        <span ><b>deleteDoc</b></span>
+                        <a href="#deleteDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Deleting Invoice.&#x27;,
+        description: &#x27;Deleting invoice from the database. - &#x60;Role: Accountant&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Deleted successfully&#x27;,
+            example: { message: &#x27;The Invoice With ID 1 Has Been Deleted.&#x27; }
+        },
+        notFound: {
+            description: &#x27;The invoice not found in the database.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to delete the invoice.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findDoc"></a>
+                    <span class="name">
+                        <span ><b>findDoc</b></span>
+                        <a href="#findDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Find Invoce&#x27;,
+        description: &#x27;Find invoice in the database. - &#x60;Role: Any&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;The invoice.&#x27;,
+            type: InvoiceEntity
+        },
+        notFound: {
+            description: &#x27;The invoice not found in the database.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/item/swagger/controller.swagger.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDoc"></a>
+                    <span class="name">
+                        <span ><b>createDoc</b></span>
+                        <a href="#createDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Creating New Item.&#x27;,
+        description: &#x27;Creating new item in the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            type: ItemEntity
+        },
+        badRequest: {
+            description: &#x27;ID is already exist in the database.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create items.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDoc"></a>
+                    <span class="name">
+                        <span ><b>deleteDoc</b></span>
+                        <a href="#deleteDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Deleting Itme.&#x27;,
+        description: &#x27;Deleting the itme from the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Deleted successfully.&#x27;,
+            example: {message: &#x27;The item with id 1 has been deleted.&#x27;}
+        },
+        notFound: {
+            description: &#x27;&#x60;Item with id not found&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to delete items.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDoc"></a>
+                    <span class="name">
+                        <span ><b>updateDoc</b></span>
+                        <a href="#updateDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Updating Itme.&#x27;,
+        description: &#x27;Updating the itme in the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Deleted successfully.&#x27;,
+            type: ItemEntity
+        },
+        notFound: {
+            description: &#x27;&#x60;Item with id not found&#x27;
+        },
+        badRequest: {
+            description: &#x27;Invalid update fields in the body&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to update items.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/returned-invoice/swagger/controller.swagger.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDoc"></a>
+                    <span class="name">
+                        <span ><b>createDoc</b></span>
+                        <a href="#createDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Creating Returned Invoice.&#x27;,
+        description: &#x27;Creating returned invoice in the database. - &#x60;Role: Accountant&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            type: ReturnedInvoiceEntity
+        },
+        badRequest: {
+            description: &#x27;No items or number of items is greater than number of items in the invoice or The number of pills greater than The number of pills in the invoice.&#x27;,
+        },
+        notFound: {
+            description: &#x27;Item not found in the database.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create the returned invoice.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/typeorm.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="db"></a>
+                    <span class="name">
+                        <span ><b>db</b></span>
+                        <a href="#db"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>config.get(&#x27;db&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typeormConfig"></a>
+                    <span class="name">
+                        <span ><b>typeormConfig</b></span>
+                        <a href="#typeormConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TypeOrmModuleOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    type: db.type ,
+    host: db.host ,
+    port: db.port ,
+    username: db.username ,
+    password: db.password ,
+    database: db.database ,
+    entities: [ UserEntity, ItemEntity, InvoiceEntity, ReturnedInvoiceEntity, ErrorEntitiy ],
+    synchronize: db.synchronize
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/swagger/controller.swagger.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteDoc"></a>
+                    <span class="name">
+                        <span ><b>deleteDoc</b></span>
+                        <a href="#deleteDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Delete the user&#x27;,
+        description: &#x27;Deleting the account of the user - &#x60;Role: admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;The user deleted successfully.&#x27;,
+            example: { message: &#x60;User &#x27;mohaned&#x27; has been deleted.&#x60; }
+        },
+        badRequest: {
+            description: &#x27;Username is missing.&#x27;
+        },
+        notFound: {
+            description:&#x27;The user not found.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to delete the user.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginDoc"></a>
+                    <span class="name">
+                        <span ><b>loginDoc</b></span>
+                        <a href="#loginDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary:&#x27;Login&#x27;,
+        description: &#x27;Login to your account and getting the JWT token.&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Login successfully and getting the JWT token.&#x27;,
+            example: { accessToken: &#x27;Yor-Access-Token&#x27; }
+        },
+        notFound: {
+            description: &#x27;The username is not registered.&#x27;
+        },
+        badRequest: {
+            description: &#x27;Password is incorrect.&#x27;
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerDoc"></a>
+                    <span class="name">
+                        <span ><b>registerDoc</b></span>
+                        <a href="#registerDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Create a new account.&#x27;,
+        description: &#x27;Creating a new account in the system using username, displayName, password and accountType. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            type: UserEntity
+        },
+        badRequest: {
+            description: &#x27;The user is already exist.&#x27;,
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to add users.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDoc"></a>
+                    <span class="name">
+                        <span ><b>updateDoc</b></span>
+                        <a href="#updateDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Update user info.&#x27;,
+        description: &#x27;Updating the user info by username. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Updated successfully.&#x27;,
+            type: UserEntity
+        },
+        badRequest: {
+            description: &#x27;&#x60;Username is missing&#x60; or &#x60;Invalid update fields in the body&#x60;&#x27;
+        },
+        notFound: {
+            description: &#x27;The user not found.&#x27;
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to update the user inof.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/decorators/jwt.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GetUser"></a>
+                    <span class="name">
+                        <span ><b>GetUser</b></span>
+                        <a href="#GetUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator( ( _ , ctx: ExecutionContext ): UserEntity &#x3D;&gt; {
+    const req &#x3D; ctx.switchToHttp().getRequest();
+    return req.user ;
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This decorator use to extract the user entity from the request.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/report/swagger/controller.swagger.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="invoiceDoc"></a>
+                    <span class="name">
+                        <span ><b>invoiceDoc</b></span>
+                        <a href="#invoiceDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Getting Invoices Report.&#x27;,
+        description: &#x27;Getting the invoices report from the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            example: {
+                report: {
+                    totalNumberOfAllPills: 30000,
+                    totalNumberOfAllItems: 200,
+                    totalNumberOfAllInvoices: 200,
+                    avgOfAllInvoicesPrice: 3000,
+                    totalPriceOfAllInvoices: 20300.4
+                },
+                user: {
+                    username: &#x27;mohaned&#x27;,
+                    displayName: &#x27;Mohaned Sherhan (Mr.x)&#x27;,
+                    accountType: &#x27;ADMIN&#x27;
+                },
+                createAt: new Date()
+            }
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create the invoices report.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemDoc"></a>
+                    <span class="name">
+                        <span ><b>itemDoc</b></span>
+                        <a href="#itemDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Getting Items Report.&#x27;,
+        description: &#x27;Getting the items report from the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            example: {
+                report: {
+                    totalNumberOfItem: 200,
+                    avgSellPillPrice: 20300.4,
+                    avgBuyPillPrice: 19800.3,
+                    totalNumberOfAllItems: 30000,
+                    totalSellPrice: 120000,
+                    totalBuyPrice: 113900,
+                    avgProductionDate: new Date(),
+                    avgExpiryDate: new Date()
+                },
+                user: {
+                    username: &#x27;mohaned&#x27;,
+                    displayName: &#x27;Mohaned Sherhan (Mr.x)&#x27;,
+                    accountType: &#x27;ADMIN&#x27;
+                },
+                createAt: new Date()
+            }
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create the items report.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnedInvoiceDoc"></a>
+                    <span class="name">
+                        <span ><b>returnedInvoiceDoc</b></span>
+                        <a href="#returnedInvoiceDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/swaggerInterface.html" target="_self" >swaggerInterface</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    operation: {
+        summary: &#x27;Getting Returned Invoices Report.&#x27;,
+        description: &#x27;Getting the returned invoices report from the database. - &#x60;Role: Admin&#x60;&#x27;
+    },
+    responses: {
+        success: {
+            description: &#x27;Created successfully.&#x27;,
+            example: {
+                report: {
+                    totalNumberOfAllPills: 30000,
+                    totalNumberOfAllItems: 200,
+                    totalNumberOfAllInvoices: 200,
+                    avgOfAllInvoicesPrice: 3000,
+                    totalPriceOfAllInvoices: 20300.4
+                },
+                user: {
+                    username: &#x27;mohaned&#x27;,
+                    displayName: &#x27;Mohaned Sherhan (Mr.x)&#x27;,
+                    accountType: &#x27;ADMIN&#x27;
+                },
+                createAt: new Date()
+            }
+        },
+        unauthorized: {
+            description: &#x27;You do not have the right JWT token.&#x27;,
+        },
+        forbidden: {
+            description: &#x27;You do not have the permission to create the retuned invoices report.&#x27;,
+        }
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/jwt.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jwt"></a>
+                    <span class="name">
+                        <span ><b>jwt</b></span>
+                        <a href="#jwt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>config.get(&#x27;jwt&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jwtConfig"></a>
+                    <span class="name">
+                        <span ><b>jwtConfig</b></span>
+                        <a href="#jwtConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>JwtModuleOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    secret: jwt.secretOrKey,
+    signOptions: {
+        expiresIn: jwt.expiresIn
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/strategies/jwt.strategy.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jwt"></a>
+                    <span class="name">
+                        <span ><b>jwt</b></span>
+                        <a href="#jwt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>config.get(&#x27;jwt&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/decorators/roles.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Roles"></a>
+                    <span class="name">
+                        <span ><b>Roles</b></span>
+                        <a href="#Roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Reflector.createDecorator&lt;string&gt;()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/main.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="server"></a>
+                    <span class="name">
+                        <span ><b>server</b></span>
+                        <a href="#server"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>config.get(&#x27;server&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,18 @@
+# The App Prot Config
+server:
+  ## The Port number..
+  port: 3003
+
+# The Default Database Config
+db:
+  ## The Default Database..
+  type: 'postgres'
+  ## The Default Port..
+  port: 5432
+  ## The name of the database.
+  database: 'market_system'
+
+# The Default JWT Config
+jwt: 
+  ## Making the JWT Expire..
+  ignoreExpiration: false

@@ -1,0 +1,32 @@
+
+# Database Config
+db:
+  ## The Host of the database..
+  host: 'localhost'
+  ## The Username..
+  username: 'postgres'
+  ## The Password..
+  password: 'postgres'
+  ## Apply The Entity Changes..
+  synchronize: false
+
+# JWT Config
+jwt: 
+  ## JWT Signing Key..
+  secretOrKey: 'password123'
+  ## JWT Expires Time..
+  expiresIn: '12h'
+
+# Password Security Config
+salt: 
+  ## The Salt Range..
+  range: 12
+
+# Admin Account Config
+admin:
+  ## The Display Name..
+  name: 'Mohaned Sherhan (Mr.x)'
+  ## The Account Username..
+  username: 'mohaned'
+  ## The Account Password..
+  password: 'mohaned123'

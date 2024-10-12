@@ -1,0 +1,1087 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>market-system-backend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">market-system-backend documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/auth/auth.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#saltData" >saltData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createDevAccount" >createDevAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createUser" >createUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteUser" >deleteUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onModuleInit" >onModuleInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUser" >updateUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(userRepository: <a href="../entitys/UserEntity.html" target="_self">Repository&lt;UserEntity&gt;</a>, jwtService: JwtService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/auth/auth.service.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../entitys/UserEntity.html" target="_self" >Repository&lt;UserEntity&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwtService</td>
+                                                  
+                                                        <td>
+                                                                    <code>JwtService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDevAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createDevAccount</b></span>
+                        <a href="#createDevAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDevAccount()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/auth/auth.service.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function use to check the developer account if is work,<br>Or creating the developer account if not.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The status of the developer account.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createUser(createUserDto: <a href="../classes/CreataUserDto.html" target="_self">CreataUserDto</a>, user: <a href="../entitys/UserEntity.html" target="_self">UserEntity</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/auth/auth.service.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This founction use to create a new account in the system.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - User is already registered.</li>
+<li>InternalServerErrorException</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createUserDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreataUserDto.html" target="_self" >CreataUserDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The information about the user.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../entitys/UserEntity.html" target="_self" >UserEntity</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user who call this function.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../entitys/UserEntity.html" target="_self" >Promise&lt;UserEntity&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>User information after the creation.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - User is already registered.</li>
+<li>InternalServerErrorException</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteUser</b></span>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteUser(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../entitys/UserEntity.html" target="_self">UserEntity</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/auth/auth.service.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function use to delete user.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - Invalid username.</li>
+<li>NotFoundException - The user not found.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>username</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../entitys/UserEntity.html" target="_self" >UserEntity</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user who call this function.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Message with the username.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - Invalid username.</li>
+<li>NotFoundException - The user not found.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(loginDto: <a href="../classes/LoginDto.html" target="_self">LoginDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/auth/auth.service.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function use to login and getting the access token for the user.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>NotFoundException - if the user is not found.</li>
+<li>HttpException - The password is not correct.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDto</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginDto.html" target="_self" >LoginDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Login information.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>access token.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>NotFoundException - if the user is not found.</li>
+<li>HttpException - The password is not correct.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onModuleInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onModuleInit</b></span>
+                        <a href="#onModuleInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onModuleInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/auth/auth.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>called when the program is run for checking the admin account.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUser</b></span>
+                        <a href="#updateUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUser(_username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateUserDto: <a href="../classes/UpdateUserDto.html" target="_self">UpdateUserDto</a>, user: <a href="../entitys/UserEntity.html" target="_self">UserEntity</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/auth/auth.service.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function use to udate user information.<br>The Valid data to update are <code>username</code>, <code>displayName</code>, <code>password</code>, <code>accountType</code>.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - Invalid username</li>
+<li>NotFoundException - There is no user.</li>
+<li>HttpException - There is invalid update fields in the updateUserDto.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>_username</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>updateUserDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateUserDto.html" target="_self" >UpdateUserDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The update information.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../entitys/UserEntity.html" target="_self" >UserEntity</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The user who call this function.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../entitys/UserEntity.html" target="_self" >Promise&lt;UserEntity&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The new user with the new information.</p>
+<h3>Exceptions:</h3>
+<ul>
+<li>HttpException - Invalid username</li>
+<li>NotFoundException - There is no user.</li>
+<li>HttpException - There is invalid update fields in the updateUserDto.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Logger</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(&#x27;AuthService&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/auth/auth.service.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saltData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>saltData</b></span>
+                        <a href="#saltData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>config.get(&#x27;salt&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/auth/auth.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { 
+    HttpException, HttpStatus, 
+    Injectable, InternalServerErrorException, 
+    Logger, 
+    NotFoundException, 
+    OnModuleInit
+} from &#x27;@nestjs/common&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { UserEntity } from &#x27;./entities/user.entity&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { CreataUserDto } from &#x27;./dtos/create-user.dto&#x27;;
+import * as bcrypt from &#x27;bcrypt&#x27; ;
+import { LoginDto } from &#x27;./dtos/login.dto&#x27;;
+import { JwtService } from &#x27;@nestjs/jwt&#x27;;
+import { UpdateUserDto } from &#x27;./dtos/update-user.dto&#x27;;
+import * as config from &#x27;config&#x27;;
+import { accountType } from &#x27;./enums/account-type.enum&#x27;;
+import { omitObjectKeys } from &#x27;src/utils/omit.util&#x27;;
+
+@Injectable()
+export class AuthService implements OnModuleInit {
+    constructor( 
+        @InjectRepository(UserEntity) private readonly userRepository: Repository&lt;UserEntity&gt;,
+        private readonly jwtService: JwtService,
+        ) {}
+
+    private readonly logger: Logger &#x3D; new Logger(&#x27;AuthService&#x27;) ;
+    private readonly saltData &#x3D; config.get(&#x27;salt&#x27;);
+
+    /**
+     * called when the program is run for checking the admin account.
+     */
+    async onModuleInit() {
+        this.createDevAccount();
+    }
+
+    /**
+     * This founction use to create a new account in the system.
+     * @param {CreataUserDto} createUserDto The information about the user.
+     * @param {UserEntity} user The user who call this function.
+     * @returns {Promise&lt;UserEntity&gt;} User information after the creation.
+     * ### Exceptions:
+     * - HttpException - User is already registered.
+     * - InternalServerErrorException
+     */
+    async createUser( createUserDto: CreataUserDto, user: UserEntity ): Promise&lt;UserEntity&gt; {
+        const { username, displayName, password, accountType } &#x3D; createUserDto ;
+        const newUser &#x3D; new UserEntity() ;
+        newUser.username &#x3D; username.toLowerCase() ;
+        newUser.displayName &#x3D; displayName;
+        newUser.salt &#x3D; await bcrypt.genSalt( Number(this.saltData.range) || 12 ) ;
+        newUser.hashPassword &#x3D; await bcrypt.hash( password, newUser.salt );
+        newUser.accountType &#x3D; accountType ;
+
+        try {
+            await newUser.save() ;
+            this.logger.log( &#x60;The ${user.accountType} &#x27;${user.username}&#x27; Create ${accountType} &#x27;${username}&#x27;.&#x60; ) ;
+            delete newUser.hashPassword;
+            delete newUser.salt ;
+            return newUser;
+        } catch( error ) {
+            if (error.code &#x3D;&#x3D; &#x27;23505&#x27; ) throw new HttpException(&#x60;The user &#x27;${createUserDto.username}&#x27; is already registered!&#x60;, HttpStatus.BAD_REQUEST) ;
+            throw new InternalServerErrorException( error ) ;
+        }
+    }
+
+    /**
+     * This function use to login and getting the access token for the user.
+     * @param {LoginDto} loginDto Login information.
+     * @returns {Promise&lt;{accessToken: string}&gt;} access token.
+     * ### Exceptions:
+     * - NotFoundException - if the user is not found.
+     * - HttpException - The password is not correct.
+     */
+    async login( loginDto: LoginDto ): Promise&lt;{accessToken: string}&gt; {
+        const { username, password } &#x3D; loginDto ;
+        const user &#x3D; await this.userRepository.findOne({where: {username: username.toLowerCase()} });
+        if (!user) throw new NotFoundException();
+        const passwordHash &#x3D; await bcrypt.hash( password, user.salt );
+        if (passwordHash !&#x3D;&#x3D; user.hashPassword ) throw new HttpException(&#x27;Password is incorrect!&#x27;, HttpStatus.BAD_REQUEST);
+        this.logger.log(&#x60;Create Access Token For ${user.accountType} &#x27;${user.username}&#x27;.&#x60;);
+        return { accessToken: this.jwtService.sign( {username: user.username, accountType: user.accountType} ) } ;
+    }
+
+    /**
+     * This function use to udate user information.\
+     * The Valid data to update are &#x60;username&#x60;, &#x60;displayName&#x60;, &#x60;password&#x60;, &#x60;accountType&#x60;.
+     * @param {string} _username The user.
+     * @param {UpdateUserDto} updateUserDto The update information.
+     * @param {UserEntity} user The user who call this function.
+     * @returns {Promise&lt;UserEntity&gt;} The new user with the new information.
+     * ### Exceptions:
+     * - HttpException - Invalid username
+     * - NotFoundException - There is no user.
+     * - HttpException - There is invalid update fields in the updateUserDto.
+     */
+    async updateUser( _username: string, updateUserDto: UpdateUserDto, user: UserEntity): Promise&lt;UserEntity&gt; {
+        _username &#x3D; _username.toLowerCase() ;
+        if (!_username) throw new HttpException(&#x27;username query is requier!&#x27;, HttpStatus.BAD_REQUEST) ;
+        const userData &#x3D; await this.userRepository.findOne( {where: { username: _username } } );
+        if (!userData) throw new NotFoundException();
+
+        const updateUserDtoKeys: string[] &#x3D; [
+            &#x27;username&#x27;,
+            &#x27;displayName&#x27;,
+            &#x27;password&#x27;,
+            &#x27;accountType&#x27;
+        ];
+        const isValidUpdateDto: boolean &#x3D; Object.keys(updateUserDto).every( (key) &#x3D;&gt;  updateUserDtoKeys.includes(key) );
+        if (!isValidUpdateDto) throw new HttpException( &#x27;Invalid update fields in the body!&#x27;, HttpStatus.BAD_REQUEST);
+        if (updateUserDto.password) {
+            userData.hashPassword &#x3D; await bcrypt.hash(updateUserDto.password, userData.salt) ;
+            delete updateUserDto.password;
+        }
+        Object.assign(userData, updateUserDto) ;
+        await this.userRepository.save(userData) ;
+
+        this.logger.log(&#x60;The ${user.accountType} &#x27;${user.username}&#x27; Update Information for User &#x27;${_username}&#x27;.&#x60;);
+        return omitObjectKeys( userData, [&#x27;salt&#x27;, &#x27;hashPassword&#x27;] ) as UserEntity;
+    }
+
+    /**
+     * This function use to delete user.
+     * @param {string} username The user.
+     * @param {UserEntity} user The user who call this function.
+     * @returns {Promise&lt;{message: string}&gt;} Message with the username.
+     * ### Exceptions:
+     * - HttpException - Invalid username.
+     * - NotFoundException - The user not found.
+     */
+    async deleteUser( username: string, user: UserEntity ): Promise&lt;{message: string}&gt; {
+        username &#x3D; username.toLowerCase();
+        if(!username) throw new HttpException(&#x60;Username is require!&#x60;, HttpStatus.BAD_REQUEST) ;
+        const { affected } &#x3D; await this.userRepository.delete({ username }) ;
+        if ( affected &gt; 0 ) {
+            this.logger.log(&#x60;The ${user.accountType} &#x27;${user.username}&#x27; Deleted The User &#x27;${username}&#x27;.&#x60;);
+            return { message: &#x60;User &#x27;${username}&#x27; has been deleted.&#x60; };
+        }
+        throw new NotFoundException(&#x60;User &#x27;${username}&#x27; not found!&#x60;);
+    }
+
+    /**
+     * This function use to check the developer account if is work,\
+     * Or creating the developer account if not.
+     * @returns {Promise&lt;boolean&gt;} The status of the developer account.
+     */
+    private async createDevAccount(): Promise&lt;boolean&gt; {
+        const adminData &#x3D; config.get(&#x27;admin&#x27;);
+        let user: UserEntity &#x3D; await this.userRepository.findOne( {where: { username: adminData.username || &#x27;mohaned&#x27; }} );
+        if ( user ) {
+            this.logger.log(&#x60;The Admin Account &#x27;${user.username}&#x27; is Runnig..&#x60;);
+        } else {
+            user &#x3D; new UserEntity();
+            user.accountType &#x3D; accountType.ADMIN;
+            user.username &#x3D; String(adminData.username).toLowerCase() || &#x27;mohaned&#x27; ;
+            user.displayName &#x3D; adminData.name || &#x27;Mohaned Sherhan (Mr.x)&#x27;;
+            user.salt &#x3D; await bcrypt.genSalt( Number(this.saltData.range) || 12 );
+            user.hashPassword &#x3D; await bcrypt.hash( adminData.password || &#x27;mohaned123&#x27;, user.salt );
+            user.createdAt &#x3D; new Date() ;
+            await this.userRepository.save( user ) ;
+            this.logger.log(&#x60;The Admin Account With Username &#x27;${user.username}&#x27; Has Been Created..&#x60;);
+        }
+        return true;
+    }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
